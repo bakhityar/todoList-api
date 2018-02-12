@@ -23,5 +23,7 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-data-rest'
     compile 'org.springframework.boot:spring-boot-starter-data-jpa'
     compile 'com.h2database:h2:1.4.191'
+    compile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.3'
+    compile 'org.springframework.data:spring-data-rest-hal-browser'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

@@ -1,9 +1,8 @@
 package com.sanscrit.task;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -12,10 +11,19 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
     private boolean status;
+    @Version
+    private Long version;
 
     public Task() {};
+
+    public Task(String title, LocalDate date, boolean status) {
+        this.title = title;
+        this.date = date;
+        this.status = status;
+    }
 
     public String getTitle() {
         return title;
