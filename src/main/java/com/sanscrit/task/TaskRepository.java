@@ -10,4 +10,6 @@ public interface TaskRepository extends PagingAndSortingRepository<Task, Long> {
 
     @RestResource(rel="title-contains", path="containsTitle")
     Page<Task> findByTitleContaining(@Param("title") String title, Pageable page);
+    
+
 }

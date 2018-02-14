@@ -1,8 +1,10 @@
 package com.sanscrit.task;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.sanscrit.user.User;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
@@ -10,12 +12,13 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @NotNull
     private String title;
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
     private boolean status;
-    @Version
-    private Long version;
+    @ManyToOne
+    private User user;
 
     public Task() {};
 
@@ -23,6 +26,10 @@ public class Task {
         this.title = title;
         this.date = date;
         this.status = status;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getTitle() {
@@ -47,5 +54,13 @@ public class Task {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
