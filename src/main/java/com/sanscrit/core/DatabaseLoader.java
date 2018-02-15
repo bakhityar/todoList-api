@@ -22,21 +22,23 @@ public class DatabaseLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-//        User user1 = new User("qwerty1", "sss", "bbb", "123123", new String[] {"ROLE_USER", "ROLE_ADMIN"});
-//        users.save(user1);
+//        User user2 = new User("qwerty", "sss", "bbb", "123123", new String[] {"ROLE_USER", "ROLE_ADMIN"});
+//        users.save(user2);
 //
-//        Task task = new Task("Do testwork", LocalDate.of(2018, Month.FEBRUARY, 15), false);
-//        task.setUser(user1);
+//        Task task = new Task("Do testwork", LocalDate.of(2018, Month.FEBRUARY, 22), false);
+//        task.setUser(user2);
 //        tasks.save(task);
-//        Task task2 = new Task("VVVVVVV", LocalDate.of(2018, Month.FEBRUARY, 15), true);
-//        task2.setUser(user1);
+//
+//        Task task2 = new Task("VVVVVVV", LocalDate.of(2018, Month.FEBRUARY, 16), true);
+//        task2.setUser(user2);
 //        tasks.save(task2);
-//        Task task3 = new Task("FFFFFF", LocalDate.of(2018, Month.FEBRUARY, 17), false);
-//        task3.setUser(user1);
+//
+//        Task task3 = new Task("FFFFFF", LocalDate.of(2018, Month.FEBRUARY, 11), false);
+//        task3.setUser(user2);
 //        tasks.save(task3);
-//        Task task4 = new Task("NNNNNNN", LocalDate.of(2018, Month.FEBRUARY, 19), false);
-//        task4.setUser(user1);
+//
+//        Task task4 = new Task("NNNNNNN", LocalDate.of(2018, Month.FEBRUARY, 28), false);
+//        task4.setUser(user2);
 //        tasks.save(task4);
-
     }
 }
