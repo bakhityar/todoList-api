@@ -11,14 +11,4 @@ public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
-
-    @EnableGlobalAuthentication
-    static class AuthenticationConfig extends GlobalAuthenticationConfigurerAdapter {
-
-        @Override
-        public void init(AuthenticationManagerBuilder auth) throws Exception {
-            auth.inMemoryAuthentication()
-                .withUser("user").password("password").roles("USER");
-        }
-    }
 }
