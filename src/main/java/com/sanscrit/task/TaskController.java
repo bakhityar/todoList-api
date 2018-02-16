@@ -1,5 +1,6 @@
 package com.sanscrit.task;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -24,6 +25,7 @@ public class TaskController {
     return principalsName;
   }
 
+  @JsonView(Task.Details.class)
   @GetMapping("/tasks/today")
   public List<Task> findToday() {
     List<Task> allTasks = (List<Task>) tasks.findAll();
@@ -39,6 +41,7 @@ public class TaskController {
   }
 
   @PreAuthorize("hasRole('ROLE_ADMIN')")
+  @JsonView(Task.Details.class)
   @GetMapping("/tasks/alltoday")
   public List<Task> findTodayAll() {
     List<Task> allTasks = (List<Task>) tasks.findAll();
@@ -53,6 +56,7 @@ public class TaskController {
     return userTasksToday;
   }
 
+  @JsonView(Task.Details.class)
   @GetMapping("/tasks/thisweek")
   public List<Task> findWeek() {
     List<Task> allTasks = (List<Task>) tasks.findAll();

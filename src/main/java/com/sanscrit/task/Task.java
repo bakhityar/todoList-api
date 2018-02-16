@@ -1,6 +1,7 @@
 package com.sanscrit.task;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonView;
 import com.sanscrit.user.User;
 
 import javax.persistence.*;
@@ -9,14 +10,28 @@ import java.time.LocalDate;
 
 @Entity
 public class Task {
+
+    interface Details {
+    }
+    interface AdminDetails {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonView({Details.class})
     private Long id;
     @NotNull
+    @JsonView({Details.class})
     private String title;
+    @NotNull
+    @JsonView({Details.class})
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
+    @NotNull
+    @JsonView({Details.class})
     private boolean status;
+    @NotNull
+    @JsonView({AdminDetails.class})
     @ManyToOne
     private User user;
 
