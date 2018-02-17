@@ -13,18 +13,32 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * Контроллер, обрабатывающий запросы
+ */
 @RestController
 @RequestMapping("/api/v1")
 public class TaskController {
+  /**
+   * Автозаполнение bean-a
+   */
   @Autowired
   private TaskRepository tasks;
 
+  /**
+   * Функция возвращающая имя действующего пользователя
+   * @return - имя пользвателя
+   */
   public String getPrincipalsName() {
     Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     String principalsName = ((UserDetails)principal).getUsername();
     return principalsName;
   }
 
+  /**
+   * Функция поиска всех задач на сегодня автора запроса
+   * @return - список задач
+   */
   @JsonView(Task.Details.class)
   @GetMapping("/tasks/today")
   public List<Task> findToday() {
@@ -40,6 +54,10 @@ public class TaskController {
     return userTasksToday;
   }
 
+  /**
+   * Функция поиска всех задач на сегодняшний день. Доступна для пользователей с ролью Админа
+   * @return - список задач
+   */
   @PreAuthorize("hasRole('ROLE_ADMIN')")
   @JsonView(Task.Details.class)
   @GetMapping("/tasks/alltoday")
@@ -56,6 +74,10 @@ public class TaskController {
     return userTasksToday;
   }
 
+  /**
+   * Функция поиска всех задач на неделю автора запроса
+   * @return
+   */
   @JsonView(Task.Details.class)
   @GetMapping("/tasks/thisweek")
   public List<Task> findWeek() {
@@ -63,6 +85,7 @@ public class TaskController {
     List<Task> userTasksWeek = new ArrayList<>();
     String principalsName = getPrincipalsName();
     LocalDate now = LocalDate.now();
+    //Поиск номера недели
     WeekFields weekFields = WeekFields.of(Locale.getDefault());
     int weekNum = now.get(weekFields.weekOfWeekBasedYear());
     for (Task t: allTasks) {

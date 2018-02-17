@@ -10,10 +10,16 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+/**
+ * Класс, определяющий работу веб-безопасности
+ */
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
+  /**
+   * Автозаполнение bean-a
+   */
   @Autowired
   private DetailsService userDetailsService;
 
@@ -22,6 +28,11 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     auth.userDetailsService(userDetailsService);
   }
 
+  /**
+   * Функция, обрабатывающая вхоящие запросы
+   * @param http - параметр HttpSecurity
+   * @throws Exception - Исключение
+   */
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http

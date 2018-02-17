@@ -12,11 +12,19 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDate;
 import java.time.Month;
 
+/**
+ * Загрузка данных в БД
+ */
 @Component
 public class DatabaseLoader implements ApplicationRunner {
+    /**
+     * Автозаполнение bean-a
+     */
     @Autowired
     private TaskRepository tasks;
-
+    /**
+     * Автозаполнение bean-a
+     */
     @Autowired
     private UserRepository users;
 
