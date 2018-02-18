@@ -98,4 +98,16 @@ public class TaskController {
     }
     return userTasksWeek;
   }
+
+  @JsonView(Task.Details.class)
+  @GetMapping("/tasks/{id}/changestatus")
+  public Task changeStatus(@PathVariable Long id) {
+    Task task = tasks.findOne(id);
+    String principalsName = getPrincipalsName();
+    if (task.getUser().getUsername().equals(principalsName) ){
+        task.setStatus(!task.isStatus());
+        tasks.save(task);
+      }
+    return task;
+  }
 }
