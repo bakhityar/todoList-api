@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * Класс User со свойствами <b>id</b>, <b>firstName</b>, <b>lastName</b>, <b>username</b>, <b>password</b>, <b>roles</b>
@@ -21,16 +22,22 @@ public class User {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
   /**Свойство - имя Юзера*/
+  @NotNull
+  @Size(min=3, max=50)
   private String firstName;
   /**Свойство - фамилия Юзера*/
-  private String lastName;
   @NotNull
+  @Size(min=3, max=50)
+  private String lastName;
   /**Свойство - username Юзера*/
+  @NotNull
   @Column(unique = true)
+  @Size(min=3, max=30)
   private String username;
   /**Свойство - пароль Юзера*/
   @NotNull
   @JsonIgnore
+  @Size(min=3, max=30)
   private String password;
   /**Свойство - роли Юзера*/
   @NotNull

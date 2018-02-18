@@ -30,42 +30,61 @@ public class DatabaseLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-//        User user = new User("admin", "sss", "bbb", "123", new String[] {"ROLE_ADMIN"});
+//        User user = new User("admin", "Bakhtiyar", "Seidakhmetov", "1441616", new String[] {"ROLE_ADMIN"});
 //        users.save(user);
 //
-//        Task task = new Task("ADM Do testwork", LocalDate.of(2018, Month.FEBRUARY, 22), false);
+//        Task task = new Task("Встретиться с братом", LocalDate.of(2018, Month.FEBRUARY, 22), false);
 //        task.setUser(user);
 //        tasks.save(task);
 //
-//        Task task2 = new Task("ADM VVVVVVV", LocalDate.of(2018, Month.FEBRUARY, 16), true);
+//        Task task2 = new Task("Купить домой лампу", LocalDate.of(2018, Month.FEBRUARY, 16), true);
 //        task2.setUser(user);
 //        tasks.save(task2);
 //
-//        Task task3 = new Task("ADM FFFFFF", LocalDate.of(2018, Month.FEBRUARY, 14), false);
+//        Task task3 = new Task("Обязательно сходить в Мск", LocalDate.of(2018, Month.FEBRUARY, 14), false);
 //        task3.setUser(user);
 //        tasks.save(task3);
 //
-//        Task task4 = new Task("ADM NNNNNNN", LocalDate.of(2018, Month.FEBRUARY, 28), false);
+//        Task task4 = new Task("Подготовить отчет для Владислава", LocalDate.of(2018, Month.FEBRUARY, 28), false);
 //        task4.setUser(user);
 //        tasks.save(task4);
 //
-//        User user2 = new User("user", "sss", "bbb", "123", new String[] {"ROLE_USER"});
+//        User user2 = new User("user", "Mark", "Newman", "123456", new String[] {"ROLE_USER"});
 //        users.save(user2);
 //
-//        Task task11 = new Task("USR Do testwork", LocalDate.of(2018, Month.FEBRUARY, 22), false);
+//        Task task11 = new Task("Дочитать книгу", LocalDate.of(2018, Month.FEBRUARY, 20), false);
 //        task11.setUser(user2);
 //        tasks.save(task11);
 //
-//        Task task22 = new Task("USR VVVVVVV", LocalDate.of(2018, Month.FEBRUARY, 16), true);
+//        Task task22 = new Task("Переписать диск на комп", LocalDate.of(2018, Month.FEBRUARY, 13), true);
 //        task22.setUser(user2);
 //        tasks.save(task22);
 //
-//        Task task33 = new Task("USR FFFFFF", LocalDate.of(2018, Month.FEBRUARY, 11), false);
+//        Task task33 = new Task("Розетка в детской", LocalDate.of(2018, Month.FEBRUARY, 17), false);
 //        task33.setUser(user2);
 //        tasks.save(task33);
 //
-//        Task task44 = new Task("USR NNNNNNN", LocalDate.of(2018, Month.FEBRUARY, 28), false);
+//        Task task44 = new Task("План на вечер", LocalDate.of(2018, Month.FEBRUARY, 23), false);
 //        task44.setUser(user2);
 //        tasks.save(task44);
+//
+//        User user3 = new User("user2", "Airat", "Issayev", "qwerty", new String[] {"ROLE_USER"});
+//        users.save(user3);
+//
+//        Task task111 = new Task("Погулять на свежем воздухе", LocalDate.of(2018, Month.FEBRUARY, 25), true);
+//        task111.setUser(user3);
+//        tasks.save(task111);
+//
+//        Task task222 = new Task("Записаться в бассейн", LocalDate.of(2018, Month.FEBRUARY, 26), true);
+//        task222.setUser(user3);
+//        tasks.save(task222);
+//
+//        Task task333 = new Task("Поискать хороший самоучитель", LocalDate.of(2018, Month.FEBRUARY, 14), false);
+//        task333.setUser(user3);
+//        tasks.save(task333);
+//
+//        Task task444 = new Task("Приготовить одежду для ДР", LocalDate.of(2018, Month.FEBRUARY, 28), false);
+//        task444.setUser(user3);
+//        tasks.save(task444);
     }
 }
