@@ -76,7 +76,7 @@ public class TaskController {
 
   /**
    * Функция поиска всех задач на неделю автора запроса
-   * @return
+   * @return - список задач
    */
   @JsonView(Task.Details.class)
   @GetMapping("/tasks/thisweek")
@@ -99,8 +99,13 @@ public class TaskController {
     return userTasksWeek;
   }
 
+  /**
+   * Функция изменения статуса задачи
+   * @param id - id задачи
+   * @return задача с измененным статусом
+   */
   @JsonView(Task.Details.class)
-  @GetMapping("/tasks/{id}/changestatus")
+  @PostMapping("/tasks/{id}/changestatus")
   public Task changeStatus(@PathVariable Long id) {
     Task task = tasks.findOne(id);
     String principalsName = getPrincipalsName();

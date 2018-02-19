@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 /**
  * Класс Task(Задача) со свойствами <b>id</b>, <b>title</b>, <b>date</b>, <b>status</b>, <b>user</b>
- * @autor Бахтияр Сейдахметов
+ * @author Бахтияр Сейдахметов
  * @version 2.1
  */
 @Entity

@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 
 /**
  * Класс User со свойствами <b>id</b>, <b>firstName</b>, <b>lastName</b>, <b>username</b>, <b>password</b>, <b>roles</b>
- * @autor Бахтияр Сейдахметов
+ * @author Бахтияр Сейдахметов
  * @version 2.1
  */
 @Entity

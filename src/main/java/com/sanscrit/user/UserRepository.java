@@ -10,7 +10,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface UserRepository extends CrudRepository<User, Long> {
   /**
    *  Функция осуществляет поиск по username
-   * @param username - username >pthf
+   * @param username - username Юзера
    * @return - Возвращает Юзера
    */
   User findByUsername(String username);
