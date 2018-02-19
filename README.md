@@ -16,7 +16,9 @@ todoList REST API приложение для планирования зада�
 
 ## Документация по API:
 
-[Документация по API](https://bakhityar.github.io/todoList-api/)
+[Документация Javadoc](https://bakhityar.github.io/todoList-api/)
+
+[[Запросы в Postman|Postman/todoToday-API.postman_collection.json]]
 
 ## Проект создан с помощью следующих технологий
 
