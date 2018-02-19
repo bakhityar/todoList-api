@@ -1,0 +1,361 @@
+{
+	"info": {
+		"name": "todoToday-API",
+		"_postman_id": "bc59ed04-97d1-5b63-a4c0-306563dbc2fd",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Список всех задач",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tasks"
+					]
+				},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "769f441e-d63a-4294-bb36-443f7fc3163f",
+					"name": "Ошибка авторизации",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tasks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/hal+json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 Feb 2018 05:18:30 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Expires",
+							"value": "0",
+							"name": "Expires",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache",
+							"name": "Pragma",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"name": "X-Content-Type-Options",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"name": "X-XSS-Protection",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 09:14:07 GMT+0600 (Центральная Азия (зима))",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "D1C1E81040AFADDFA95D8E50C660AE03",
+							"key": "JSESSIONID"
+						}
+					],
+					"responseTime": 338,
+					"body": "{\n    401\n}"
+				}
+			]
+		},
+		{
+			"name": "Список задач на сегодняшний день авторизованного пользователя",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n                \"title\": \"Купить домой лампу\",\n                \"date\": \"2018-02-21\",\n                \"status\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/tasks/thisweek",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"thisweek"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Список задач на неделю авторизованного пользователя",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n                \"title\": \"Купить домой лампу\",\n                \"date\": \"2018-02-21\",\n                \"status\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/tasks/thisweek",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"thisweek"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Список задач на сегодняшний день всех пользователей. Доступно только для администратора",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n                \"title\": \"Купить домой лампу\",\n                \"date\": \"2018-02-21\",\n                \"status\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/tasks/alltoday",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"alltoday"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление новой задачи. Задача автоматически закрепляется за создателем",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n                \"title\": \"Сделать запросы на POSTMAN\",\n                \"date\": \"2018-02-22\",\n                \"status\": false\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/tasks/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Редактирование задачи. Автор не меняется",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n                \"title\": \"Обновление задачи. Метод PUT\",\n                \"date\": \"2018-02-22\",\n                \"status\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/tasks/33",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"33"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление задачи. Задачу может удалить автор или администратор",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n                \"title\": \"Обновление задачи. Метод PUT\",\n                \"date\": \"2018-02-22\",\n                \"status\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/tasks/33",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"33"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Изменение статуса задачи(true на fale и обратно)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/tasks/1/changestatus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"1",
+						"changestatus"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "1441616",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	}
+}
